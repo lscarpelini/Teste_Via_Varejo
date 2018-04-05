@@ -46,6 +46,18 @@ Para uma nova consulta digite 'N' + Enter
 
 Para sair do sistema digite qualquer tecla + Enter.
 
+## Teste Unitário
+
+A solution possui 3 testes unitário para validar os metodos utilizados no sistema. 
+
+```
+- ObterAmigosProximos_Teste
+- Obter_Por_Amigo_Teste()
+- Obter_Teste()
+
+```
+O Sistema irá listar os amigos mais próximos as amigo com código "1".
+
 ## Feito com
 
 * [Visual Studio 2015]
