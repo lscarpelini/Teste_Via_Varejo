@@ -75,6 +75,7 @@ namespace AmigoProximo.Apresentacao
             }
         }
 
+
         static void CarregaCabecalho()
         {
             Console.WriteLine("***********************************************************************\n");
