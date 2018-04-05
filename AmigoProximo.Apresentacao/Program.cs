@@ -14,10 +14,14 @@ namespace AmigoProximo.Apresentacao
 
         static void Main(string[] args)
         {
+            //Injeção de Dependencia
             IKernel kernel = new StandardKernel(new AmigoProximoExportaModulo());
             _amigoNegocio = kernel.Get<AmigoNegocio>();
 
+            //Ajusta cor do console
             Console.ForegroundColor = ConsoleColor.White;
+
+            //Mantem o sistema rodando até que o usuário digite "S" para sair do sistema
             while (_sair.ToUpper() == "N")
             { 
                 CarregaAmigosProximos();
@@ -30,25 +34,27 @@ namespace AmigoProximo.Apresentacao
             {
                 CarregaCabecalho();
 
+                //Lista Amigos Disponíveis
                 Console.WriteLine("\n=========== Lista de Amigos ============\n");
-
-                //_amigoNegocio = new Negocio.AmigoNegocio();
-
                 var listaAmigos = _amigoNegocio.Obter();
                 foreach (var amigo in listaAmigos)
                 {
                     Console.WriteLine(amigo.Id + " - " + amigo.Nome + " - " + amigo.Cidade);
                 }
 
+                //Solicita o código do Amigo que esta visitando
                 Console.Write("\nDigite o Código do Amigo que esta visitando + Enter: \n");
+                Console.Write("\nDigite 'S' + Enter para sair: \n");
 
                 string idAmigo = "";
                 idAmigo = Console.ReadLine();
 
+                //Verifica se usuário deseja sair do sistema
+                Sair(idAmigo);
+
+                //Lista Amigos proximos
                 var listaAmigosProximos = _amigoNegocio.ObterAmigosProximos(Convert.ToInt16(idAmigo));
-
                 Console.Write("\n=========== Amigos mais proximos listados abaixo ==============\n");
-
                 foreach (var amigoProximo in listaAmigosProximos)
                 {
                     Console.WriteLine("\nCódigo:" + amigoProximo.Id);
@@ -57,30 +63,47 @@ namespace AmigoProximo.Apresentacao
                     Console.WriteLine("Distância:" + amigoProximo.Distancia + "\n");
                 }
 
+                //Espera retorno para continuar no sistema ou sair
                 Console.Write("\nDigite 'N' + Enter para nova consulta. \nDigite qualquer tecla + Enter para sair do sistema. \n");
+                
+                //Verifica se usuário deseja sair do sistema
+                Sair(Console.ReadLine());
 
-                _sair = Console.ReadLine();
-
+                //Limpa o console
                 Console.Clear();
             }
             catch (Exception)
             {
-
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\nFavor digitar um Código correto para busca.\nCtrl + C para sair do sistema.\n" );
+                Console.Write("\nFavor digitar um Código correto para busca.\n" );
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("");
-                
+                Console.WriteLine("");   
             }
         }
 
-
         static void CarregaCabecalho()
         {
+            //Monta cabeçalho da aplicação
             Console.WriteLine("***********************************************************************\n");
             Console.WriteLine("*                         -=  AMIGO PRÓXIMO  =-                       *\n");
+            Console.WriteLine("*              (Digite 'S' + Enter para sair do sistema)              *\n");
             Console.WriteLine("***********************************************************************\n");
         }
+
+        static void Sair(string valorDigitado)
+        {
+            //Metodo para sair do sistema
+            if (valorDigitado.ToUpper() == "S")
+            {
+                _sair = "S";
+            }
+            else
+            {
+                _sair = "N";
+            }
+
+        }
+
     }
 }

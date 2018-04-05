@@ -43,6 +43,12 @@ namespace AmigoProximo.Dominio
         {
             return string.Concat(Distancia, " KM");
         }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
+
     }
 
 
