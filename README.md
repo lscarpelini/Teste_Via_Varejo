@@ -8,7 +8,7 @@ Como sou um programador com muitos amigos espalhados pelo mundo. Resolvi fazer u
 Visual Studio para executar o programa e analisar o código do projeto.
 
 
-### Arquitetura do Projeto
+### Arquitetura do Projeto Amigo Próximo
 
 Para melhor entendimento do código o programa ficou dividido em 4 camadas.
 
@@ -21,47 +21,29 @@ Para melhor entendimento do código o programa ficou dividido em 4 camadas.
 
 ```
 
-## Utilização do Programa
+## Como executar o Programa
 
 A camada de projeto de "Apresentação" ser setada como projeto principal. 
 
 ```
 Set as StartUp Project
 ```
+Após esse passo é só rodar o programa com F5.
 
-### Break down into end to end tests
 
-Explain what these tests test and why
+## Utilização do Programa
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
+O programa irá listar todos os seus amigos. Você irá informar o código do amigo que você esta visitando e apertar Enter.
 
 ```
-Give an example
+Exemplo: 1 + Enter
 ```
+O Sistema irá listar os amigos mais próximos as amigo com código "1".
 
-## Deployment
+## Feito com
 
-Add additional notes about how to deploy this on a live system
+* [Visual Studio 2015]
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Autor
 
