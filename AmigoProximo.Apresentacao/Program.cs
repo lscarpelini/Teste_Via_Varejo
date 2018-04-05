@@ -21,6 +21,8 @@ namespace AmigoProximo.Apresentacao
         {
             try
             {
+                CarregaCabecalho();
+
                 Console.WriteLine("\n=========== Lista de Amigos ============\n");
 
                 _amigoNegocio = new Negocio.AmigoNegocio();
@@ -30,7 +32,7 @@ namespace AmigoProximo.Apresentacao
                     Console.WriteLine(amigo.Id + " - " + amigo.Nome + " - " + amigo.Cidade);
                 }
 
-                Console.Write("\n=========== Digite o Código do Amigo que esta visitando + Enter: =============\n");
+                Console.Write("\nDigite o Código do Amigo que esta visitando + Enter: \n");
 
                 string idAmigo = "";
                 idAmigo = Console.ReadLine();
@@ -63,6 +65,13 @@ namespace AmigoProximo.Apresentacao
                 Console.WriteLine("");
                 
             }
+        }
+
+        static void CarregaCabecalho()
+        {
+            Console.WriteLine("***********************************************************************\n");
+            Console.WriteLine("*                         -=  AMIGO PRÓXIMO  =-                       *\n");
+            Console.WriteLine("***********************************************************************\n");
         }
     }
 }
