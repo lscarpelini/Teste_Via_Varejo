@@ -40,6 +40,8 @@ Exemplo: 1 + Enter
 ```
 O Sistema irá listar os amigos mais próximos as amigo com código "1".
 
+Para uma nova consulta digite 'N' + Enter. Para sair do sistema digite qualquer tecla + Enter.
+
 ## Feito com
 
 * [Visual Studio 2015]
