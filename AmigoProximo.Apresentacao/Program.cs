@@ -1,15 +1,22 @@
-﻿using System;
+﻿using AmigoProximo.Dominio.Interface;
+using AmigoProximo.Negocio;
+using Ninject;
+using System;
 
 namespace AmigoProximo.Apresentacao
 {
     class Program
     {
 
-        static AmigoProximo.Negocio.AmigoNegocio _amigoNegocio;
+        static IAmigoNegocio _amigoNegocio;
+
         static string _sair = "N"; 
 
         static void Main(string[] args)
         {
+            IKernel kernel = new StandardKernel(new AmigoProximoExportaModulo());
+            _amigoNegocio = kernel.Get<AmigoNegocio>();
+
             Console.ForegroundColor = ConsoleColor.White;
             while (_sair.ToUpper() == "N")
             { 
@@ -25,7 +32,8 @@ namespace AmigoProximo.Apresentacao
 
                 Console.WriteLine("\n=========== Lista de Amigos ============\n");
 
-                _amigoNegocio = new Negocio.AmigoNegocio();
+                //_amigoNegocio = new Negocio.AmigoNegocio();
+
                 var listaAmigos = _amigoNegocio.Obter();
                 foreach (var amigo in listaAmigos)
                 {

@@ -1,8 +1,7 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AmigoProximo.Negocio;
-using System.Collections.Generic;
-using System.Linq;
+using AmigoProximo.Dominio.Interface;
+using Ninject;
 
 namespace AmigoProximo.TesteUnitario.Negocio
 {
@@ -10,11 +9,12 @@ namespace AmigoProximo.TesteUnitario.Negocio
     public class AmigoTeste
     {
 
-        private AmigoNegocio _amigoNegocio;
+        private IAmigoNegocio _amigoNegocio;
 
         public AmigoTeste()
         {
-            _amigoNegocio = new AmigoNegocio();
+            IKernel kernel = new StandardKernel(new AmigoProximoExportaModulo());
+            _amigoNegocio = kernel.Get<AmigoNegocio>();
         }
         
 

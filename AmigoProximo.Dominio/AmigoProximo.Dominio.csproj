@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Amigo.cs" />
     <Compile Include="Coordenada.cs" />
+    <Compile Include="Interface\IAmigoNegocio.cs" />
+    <Compile Include="Interface\IAmigoRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

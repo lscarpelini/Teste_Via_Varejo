@@ -1,21 +1,21 @@
 ﻿using AmigoProximo.Dominio;
-using AmigoProximo.Repositorio;
+using AmigoProximo.Dominio.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace AmigoProximo.Negocio
 {
-    public class AmigoNegocio
+    public class AmigoNegocio : IAmigoNegocio
     {
 
-        AmigoRepositorio _repositorio;
+        IAmigoRepositorio _repositorio;
 
         Amigo _visitante;
 
-        public AmigoNegocio()
+        public AmigoNegocio(IAmigoRepositorio amigoRepositorio)
         {
-            _repositorio = new AmigoRepositorio();
+            _repositorio = amigoRepositorio;
         }
 
         public ICollection<Amigo> Obter()

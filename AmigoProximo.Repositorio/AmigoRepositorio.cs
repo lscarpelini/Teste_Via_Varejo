@@ -1,10 +1,11 @@
 ﻿using AmigoProximo.Dominio;
+using AmigoProximo.Dominio.Interface;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace AmigoProximo.Repositorio
 {
-    public class AmigoRepositorio
+    public class AmigoRepositorio : IAmigoRepositorio
     {
         ICollection<Amigo> Amigos;
 

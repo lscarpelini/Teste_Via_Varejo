@@ -1,8 +1,7 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AmigoProximo.Repositorio;
+using AmigoProximo.Dominio.Interface;
+using Ninject;
 
 namespace AmigoProximo.TesteUnitario.Repositorio
 {
@@ -13,11 +12,13 @@ namespace AmigoProximo.TesteUnitario.Repositorio
     public class AmigoTeste
     {
 
-        private AmigoRepositorio _amigoRepositorio;
+        private IAmigoRepositorio _amigoRepositorio;
 
         public AmigoTeste()
         {
-            _amigoRepositorio = new AmigoRepositorio();
+            IKernel kernel = new StandardKernel(new AmigoProximoExportaModulo());
+            _amigoRepositorio = kernel.Get<AmigoRepositorio>();
+
         }
 
 

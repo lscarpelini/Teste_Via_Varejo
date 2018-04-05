@@ -48,10 +48,6 @@
       <Project>{59E0809F-04FF-4EF0-B666-DCE1E9C7AF4A}</Project>
       <Name>AmigoProximo.Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AmigoProximo.Repositorio\AmigoProximo.Repositorio.csproj">
-      <Project>{21A738D7-FAF6-49A9-AE71-092662B9B21C}</Project>
-      <Name>AmigoProximo.Repositorio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
