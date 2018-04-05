@@ -68,7 +68,7 @@ namespace AmigoProximo.Apresentacao
 
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\n Favor digitar um Código correto para busca. \n" );
+                Console.Write("\nFavor digitar um Código correto para busca.\nCtrl + C para sair do sistema.\n" );
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("");
                 
