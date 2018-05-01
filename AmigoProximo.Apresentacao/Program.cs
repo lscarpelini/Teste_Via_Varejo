@@ -36,7 +36,7 @@ namespace AmigoProximo.Apresentacao
                 CarregaCabecalho();
 
                 //Lista Amigos Disponíveis
-                Console.WriteLine("\n=========== Lista de Amigos ============\n");
+                Console.WriteLine("\n=========== Lista de Amigos New Branche ============\n");
                 var listaAmigos = _amigoNegocio.Obter();
                 foreach (var amigo in listaAmigos)
                 {
