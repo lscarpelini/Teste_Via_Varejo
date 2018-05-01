@@ -12,6 +12,7 @@ namespace AmigoProximo.Apresentacao
 
         static string _sair = "N"; 
 
+
         static void Main(string[] args)
         {
             //Injeção de Dependencia
